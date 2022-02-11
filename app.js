@@ -84,10 +84,6 @@ auth.use(function (req, res, next) {
   }
 });
 
-//ruta para probar token jwt
-// server.use("/", auth, routes);
-//rutas
-
-server.use("/", scrap, routes);
+server.use("/", [scrap, auth], routes);
 
 module.exports = server;
